@@ -6,7 +6,6 @@ class InitSets:
         this.clear = lambda: os.system("CLS")
         this.clear()
         this.string = "(10 * (5 -2))**2 + (5 + (8**2 - 30**2 / 30))"
-        #this.string = "20-3-4"
         this.anlytic = []
         this.levelMath = {
             1: "**",
@@ -50,15 +49,15 @@ class InitSets:
         while len(this.string) > 1 :
             if "(" in this.whole_string:
                 this.FindParentheses(0)
-                print(this.parethBegin, this.parethEnd)
                 this.string = this.whole_string[this.parethBegin + 1: this.parethEnd]
                 this.MathCalc()
                 this.string = this.whole_string[: this.parethBegin] + this.string + this.whole_string[this.parethEnd + 1:]
                 this.whole_string = this.string
-                print(this.string)
             else:
                 this.string = this.whole_string
                 this.MathCalc()
+        print("Результат равен: ", this.string[0])
+        
 
     def FindParentheses(this, begin):
         for i in range(begin, len(this.whole_string)):
@@ -93,9 +92,8 @@ class InitSets:
 
     def Calc(this):
         this.string = list(filter(this.Clean, this.string))
-        print(this.string)
         this.string = list(map(this.Calculator, this.string))
-        print(this.string)
+        #print("Результат равен: ", this.string)
 
     def Clean(this, x):
         if type(x) is tuple:

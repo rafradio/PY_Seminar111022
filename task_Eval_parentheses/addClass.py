@@ -5,7 +5,8 @@ class InitSets:
     def __init__(this):
         this.clear = lambda: os.system("CLS")
         this.clear()
-        this.string = "(10 * (5 -2))**2 + (5 + (8**2 - 30**2 / 30))"
+        #this.string = "(10 * (5 -2))**2 + (5 + (8**2 - 30**2 / 30))"
+        this.string = "10 * 5 -2**2 + 5 + 8**2 - 30**2 / 30"
         this.anlytic = []
         this.levelMath = {
             1: "**",
@@ -93,7 +94,6 @@ class InitSets:
     def Calc(this):
         this.string = list(filter(this.Clean, this.string))
         this.string = list(map(this.Calculator, this.string))
-        #print("Результат равен: ", this.string)
 
     def Clean(this, x):
         if type(x) is tuple:
